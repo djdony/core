@@ -12,12 +12,12 @@
                         </b-col>
                         <b-col>
                             <p style="text-align: center;" class="mb-4">
-                                <img src="../assets/img/vito.png" class="full-width">
+                                <img src="../assets/img/vito2.png" class="full-width">
                             </p>
                         </b-col>
                         <b-col>
                             <p style="text-align: center;" class="mb-4">
-                                <img src="../assets/img/sprinter2.png" class="full-width">
+                                <img src="../assets/img/sprinter.png" class="full-width">
                             </p>
                         </b-col>
                     </b-row>

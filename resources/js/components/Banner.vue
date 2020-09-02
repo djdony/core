@@ -12,10 +12,6 @@
                         <b-button variant="success" href="#" size="lg">Заказать</b-button>
                     </b-form>
                 </b-row>
-
-
-
-
         </b-jumbotron>
     </div>
 </template>
@@ -45,5 +41,4 @@ export default {
     background-size: cover;
     background-position: center;
 }
-
 </style>

@@ -1,5 +1,6 @@
 <template>
     <div>
+
         <b-navbar toggleable="lg" type="dark" fixed="top">
             <b-navbar-brand href="#">Time Transfer</b-navbar-brand>
 

@@ -1,5 +1,5 @@
-import Home from '../views/Home'
-import About from '../views/About'
+import Old from '../views/Home'
+import Simple from "../views/Simple";
 
 
 const routes = () => {
@@ -7,12 +7,12 @@ const routes = () => {
         {
             path: '/',
             name: 'Home',
-            component: Home,
+            component: Simple,
         },
         {
-            path: '/about',
-            name: 'About',
-            component: About,
+            path: '/old',
+            name: 'Old',
+            component: Old,
         }
     ]
 }
