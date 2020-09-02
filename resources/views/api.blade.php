@@ -8,10 +8,7 @@
 <body class="antilaliased font-sans bg-gray-200">
 
 <main id="app">
-    <navigation></navigation>
-    <div class="py-5">
         <router-view></router-view>
-    </div>
 </main>
 
 <script src="/js/app.js"></script>
