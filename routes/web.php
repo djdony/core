@@ -22,3 +22,8 @@ Route::group(['prefix' => 'admin'], function () {
 });
 
 Route::view('/', 'api');
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Route::resource('faqs', 'FaqController', ["as" => 'admin']);
+});

@@ -6,7 +6,7 @@
             <main id="main">
                 <about :about="setting.about"></about>
                 <why></why>
-                <faq></faq>
+                <faq :questions="questions"></faq>
                 <contact :setting="setting"></contact>
                 <footers></footers>
             </main>
@@ -31,10 +31,12 @@ export default {
     },
     mounted() {
         this.$store.dispatch('fetchSettings')
+        this.$store.dispatch('fetchQuestions')
     },
     computed: {
         ...mapGetters([
-            'settings'
+            'settings',
+            'questions'
         ])
     }
 }

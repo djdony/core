@@ -16,3 +16,5 @@ use Illuminate\Support\Facades\Route;
 
 
 Route::resource('settings', 'SettingAPIController');
+Route::resource('faqs', 'FaqAPIController');
+
