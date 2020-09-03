@@ -1,7 +1,7 @@
 <template>
     <div>
         <b-jumbotron fluid header-level="5" text-variant="light" align="center">
-            <template v-slot:header>ЗАКАЗ ТРАНСФЕРА ОНЛАЙН</template>
+            <template v-slot:header>{{ title }}</template>
             <b-row class="vertical-center">
                 <b-form inline>
                     <b-form-select v-model="selected" size="lg" :options="options"></b-form-select>
@@ -16,6 +16,7 @@
 
 <script>
 export default {
+    props: ['title'],
     name: 'banner',
     data() {
         return {

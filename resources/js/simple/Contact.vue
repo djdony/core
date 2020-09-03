@@ -4,23 +4,23 @@
             <b-container>
 
                 <div class="section-title">
-                    <h2>Наши контакты</h2>
+                    <h2>{{setting.contact_title}}</h2>
                 </div>
                 <b-row>
                     <b-col cols="4">
                             <div class="address">
                                 <i class="bx bx-map"></i>
-                                <p>Antalya<br>Lara</p>
+                                <p>{{setting.address}}</p>
                             </div>
 
                             <div class="email">
                                 <i class="bx bx-envelope"></i>
-                                <p>info@example.com</p>
+                                <p>{{ setting.email }}</p>
                             </div>
 
                             <div class="phone">
                                 <i class="bx bx-phone-call"></i>
-                                <p>+90 533 555 55 55</p>
+                                <p>{{ setting.phone }}</p>
                             </div>
                     </b-col>
             <b-col>
@@ -87,6 +87,7 @@
 
 <script>
 export default {
+    props: ['setting'],
     name: 'contact'
 }
 </script>

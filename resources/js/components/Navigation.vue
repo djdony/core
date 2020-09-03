@@ -2,7 +2,7 @@
     <div>
 
         <b-navbar toggleable="lg" type="dark" fixed="top">
-            <b-navbar-brand href="#">Time Transfer</b-navbar-brand>
+            <b-navbar-brand href="#">{{ company }}</b-navbar-brand>
 
             <b-navbar-toggle target="nav-collapse"></b-navbar-toggle>
 
@@ -29,6 +29,7 @@
 
 <script>
 export default {
+    props: ['company']
 
 }
 </script>

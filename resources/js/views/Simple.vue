@@ -1,20 +1,23 @@
 <template>
     <div>
-        <navigation></navigation>
-        <banner></banner>
+        <div v-for="setting in settings.data">
+            <navigation :company="setting.company"></navigation>
+            <banner :title="setting.title"></banner>
             <main id="main">
-                <about></about>
+                <about :about="setting.about"></about>
                 <why></why>
                 <faq></faq>
-                <contact></contact>
+                <contact :setting="setting"></contact>
                 <footers></footers>
-
             </main>
+        </div>
+
     </div>
 
 </template>
 
 <script>
+import {mapGetters} from "vuex";
 export default {
     name: 'home',
     components: {
@@ -25,6 +28,14 @@ export default {
         Contact: () => import('../simple/Contact'),
         Footers: () => import('../simple/Footer'),
         About: () => import('../simple/About'),
+    },
+    mounted() {
+        this.$store.dispatch('fetchSettings')
+    },
+    computed: {
+        ...mapGetters([
+            'settings'
+        ])
     }
 }
 </script>
