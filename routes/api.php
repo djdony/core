@@ -18,3 +18,18 @@ use Illuminate\Support\Facades\Route;
 Route::resource('settings', 'SettingAPIController');
 Route::resource('faqs', 'FaqAPIController');
 
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Route::resource('car_types', 'CarTypeAPIController');
+});
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Route::resource('cars', 'CarAPIController');
+});
+
+
+Route::group(['prefix' => 'admin'], function () {
+    Route::resource('locations', 'LocationAPIController');
+});

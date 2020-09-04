@@ -4,9 +4,8 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateFaqsTable extends Migration
+class CreateImagesTable extends Migration
 {
-
     /**
      * Run the migrations.
      *
@@ -14,14 +13,12 @@ class CreateFaqsTable extends Migration
      */
     public function up()
     {
-        Schema::create('faqs', function (Blueprint $table) {
-            $table->tinyIncrements('id');
-            $table->string('question');
-            $table->string('answer');
-            $table->tinyInteger('type')->nullable();
-            $table->tinyInteger('sort_order')->nullable();
+        Schema::create('images', function (Blueprint $table) {
+            $table->smallIncrements('id');
+            $table->string('imageable_id');
+            $table->string('imageable_type');
+            $table->string('url');
             $table->timestamps();
-            $table->softDeletes();
         });
     }
 
@@ -32,6 +29,6 @@ class CreateFaqsTable extends Migration
      */
     public function down()
     {
-        Schema::drop('faqs');
+        Schema::dropIfExists('images');
     }
 }
