@@ -28,6 +28,18 @@
     {!! Form::textarea('description', null, ['class' => 'form-control']) !!}
 </div>
 
+<!-- Image Upload Field -->
+<div class="form-group col-sm-12 col-lg-12">
+    <label for="images">{{ __('models/cars.fields.image')}}</label>
+    @if(isset($car))
+    @foreach($car->images as $image)
+            <img src="{{ asset('images/thumbs/'.$image->url) }}" alt="{{$image->url}}">
+    @endforeach
+    @endif
+    <input name="images[]" type="file" multiple>
+</div>
+
+
 <!-- Submit Field -->
 <div class="form-group col-sm-12">
     {!! Form::submit(__('crud.save'), ['class' => 'btn btn-primary']) !!}

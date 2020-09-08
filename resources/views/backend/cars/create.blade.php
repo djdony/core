@@ -18,8 +18,9 @@
                                 <strong>Create @lang('models/cars.singular')</strong>
                             </div>
                             <div class="card-body">
-                                {!! Form::open(['route' => 'admin.cars.store']) !!}
-                                   @include('backend.cars.fields')
+                                {!! Form::open(['route' => 'admin.cars.store', 'enctype' => 'multipart/form-data']) !!}
+
+                                @include('backend.cars.fields')
 
                                 {!! Form::close() !!}
                             </div>

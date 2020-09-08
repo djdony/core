@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CreateDriverRequest;
-use App\Http\Requests\UpdateDriverRequest;
+use App\Http\Requests\DriverRequest;
 use App\Repositories\DriverRepository;
-use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
@@ -48,11 +46,11 @@ class DriverController extends AppBaseController
     /**
      * Store a newly created Driver in storage.
      *
-     * @param CreateDriverRequest $request
+     * @param DriverRequest $request
      *
      * @return Response
      */
-    public function store(CreateDriverRequest $request)
+    public function store(DriverRequest $request)
     {
         $input = $request->all();
 
@@ -107,11 +105,11 @@ class DriverController extends AppBaseController
      * Update the specified Driver in storage.
      *
      * @param int $id
-     * @param UpdateDriverRequest $request
+     * @param DriverRequest $request
      *
      * @return Response
      */
-    public function update($id, UpdateDriverRequest $request)
+    public function update($id, DriverRequest $request)
     {
         $driver = $this->driverRepository->find($id);
 

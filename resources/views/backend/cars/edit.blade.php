@@ -18,7 +18,7 @@
                               <strong>Edit @lang('models/cars.singular')</strong>
                           </div>
                           <div class="card-body">
-                              {!! Form::model($car, ['route' => ['admin.cars.update', $car->id], 'method' => 'patch']) !!}
+                              {!! Form::model($car, ['route' => ['admin.cars.update', $car->id], 'method' => 'patch', 'enctype' => 'multipart/form-data']) !!}
 
                               @include('backend.cars.fields')
 

@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CreateSettingRequest;
-use App\Http\Requests\UpdateSettingRequest;
+use App\Http\Requests\SettingRequest;
 use App\Repositories\SettingRepository;
-use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
@@ -48,11 +46,11 @@ class SettingController extends AppBaseController
     /**
      * Store a newly created Setting in storage.
      *
-     * @param CreateSettingRequest $request
+     * @param SettingRequest $request
      *
      * @return Response
      */
-    public function store(CreateSettingRequest $request)
+    public function store(SettingRequest $request)
     {
         $input = $request->all();
 
@@ -107,11 +105,11 @@ class SettingController extends AppBaseController
      * Update the specified Setting in storage.
      *
      * @param int $id
-     * @param UpdateSettingRequest $request
+     * @param SettingRequest $request
      *
      * @return Response
      */
-    public function update($id, UpdateSettingRequest $request)
+    public function update($id, SettingRequest $request)
     {
         $setting = $this->settingRepository->find($id);
 

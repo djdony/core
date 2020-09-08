@@ -2,12 +2,11 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CreateCarRequest;
-use App\Http\Requests\UpdateCarRequest;
+use App\Http\Requests\CarRequest;
 use App\Repositories\CarRepository;
-use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
+use Intervention\Image\Facades\Image;
 use Response;
 
 class CarController extends AppBaseController
@@ -18,6 +17,19 @@ class CarController extends AppBaseController
     public function __construct(CarRepository $carRepo)
     {
         $this->carRepository = $carRepo;
+    }
+
+    protected function storeImage($image, $resize = null){
+        $name = $image->getClientOriginalName();
+        $path = $image->storeAs('images',$name, 'local');
+        if ($resize){
+            Image::make($image)
+                ->resize(null,$resize,function ($constraint){
+                    $constraint->aspectRatio();
+                })
+                ->save(public_path().'/images/thumbs/'.$name);
+        }
+
     }
 
     /**
@@ -45,18 +57,25 @@ class CarController extends AppBaseController
         return view('backend.cars.create');
     }
 
+
     /**
      * Store a newly created Car in storage.
      *
-     * @param CreateCarRequest $request
+     * @param CarRequest $request
      *
      * @return Response
      */
-    public function store(CreateCarRequest $request)
+    public function store(CarRequest $request)
     {
         $input = $request->all();
-
         $car = $this->carRepository->create($input);
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $image) {
+                $this->storeImage($image,200);
+                $car->images()->create(['url' => $image->getClientOriginalName()]);
+            }
+
+        }
 
         Flash::success(__('messages.saved', ['model' => __('models/cars.singular')]));
 
@@ -107,11 +126,11 @@ class CarController extends AppBaseController
      * Update the specified Car in storage.
      *
      * @param int $id
-     * @param UpdateCarRequest $request
+     * @param CarRequest $request
      *
-     * @return Response
+     * @return
      */
-    public function update($id, UpdateCarRequest $request)
+    public function update($id, CarRequest $request)
     {
         $car = $this->carRepository->find($id);
 
@@ -119,6 +138,14 @@ class CarController extends AppBaseController
             Flash::error(__('messages.not_found', ['model' => __('models/cars.singular')]));
 
             return redirect(route('admin.cars.index'));
+        }
+
+        if ($request->hasFile('images')) {
+            foreach ($request->file('images') as $image) {
+                $this->storeImage($image,150);
+                $car->images()->updateOrCreate(['url' => $image->getClientOriginalName()]);
+            }
+
         }
 
         $car = $this->carRepository->update($request->all(), $id);

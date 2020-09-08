@@ -20,7 +20,7 @@ class Driver extends Model
     use SoftDeletes;
 
     public $table = 'drivers';
-    
+
 
     protected $dates = ['deleted_at'];
 
@@ -45,15 +45,4 @@ class Driver extends Model
         'phone' => 'string',
         'email' => 'string'
     ];
-
-    /**
-     * Validation rules
-     *
-     * @var array
-     */
-    public static $rules = [
-        'name' => 'required'
-    ];
-
-    
 }

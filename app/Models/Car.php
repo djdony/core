@@ -2,7 +2,7 @@
 
 namespace App\Models;
 
-use Eloquent as Model;
+use Illuminate\Database\Eloquent\Model as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
 /**
@@ -24,17 +24,18 @@ class Car extends Model
 
     public $table = 'cars';
 
+    protected $keyType = 'string';
 
     protected $dates = ['deleted_at'];
 
-
+    protected $with = ['images'];
 
     public $fillable = [
         'name',
         'car_type_id',
         'max_pax',
         'max_luggage',
-        'description'
+        'description',
     ];
 
     /**
@@ -52,21 +53,15 @@ class Car extends Model
     ];
 
     /**
-     * Validation rules
-     *
-     * @var array
-     */
-    public static $rules = [
-        'name' => 'required|unique:cars',
-        'car_type_id' => 'required',
-        'max_pax' => 'required'
-    ];
-
-    /**
      * @return \Illuminate\Database\Eloquent\Relations\BelongsToOne
      **/
     public function carType()
     {
         return $this->belongsTo('App\Models\CarType');
+    }
+
+    public function images()
+    {
+        return $this->morphMany('App\Models\Image','imageable');
     }
 }

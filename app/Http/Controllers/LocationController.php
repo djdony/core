@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CreateLocationRequest;
-use App\Http\Requests\UpdateLocationRequest;
+use App\Http\Requests\LocationRequest;
 use App\Repositories\LocationRepository;
-use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
@@ -48,11 +46,11 @@ class LocationController extends AppBaseController
     /**
      * Store a newly created Location in storage.
      *
-     * @param CreateLocationRequest $request
+     * @param LocationRequest $request
      *
      * @return Response
      */
-    public function store(CreateLocationRequest $request)
+    public function store(LocationRequest $request)
     {
         $input = $request->all();
 
@@ -107,11 +105,11 @@ class LocationController extends AppBaseController
      * Update the specified Location in storage.
      *
      * @param int $id
-     * @param UpdateLocationRequest $request
+     * @param LocationRequest $request
      *
      * @return Response
      */
-    public function update($id, UpdateLocationRequest $request)
+    public function update($id, LocationRequest $request)
     {
         $location = $this->locationRepository->find($id);
 

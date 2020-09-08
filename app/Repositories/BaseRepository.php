@@ -190,4 +190,12 @@ abstract class BaseRepository
 
         return $model->delete();
     }
+
+    // Get with eager loading
+    public function with($with)
+    {
+        $query = $this->model->newQuery()->with($with);
+
+        return $query->get();
+    }
 }

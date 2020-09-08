@@ -37,15 +37,6 @@ class CarType extends Model
         'name' => 'string'
     ];
 
-    /**
-     * Validation rules
-     *
-     * @var array
-     */
-    public static $rules = [
-        'name' => 'required|unique:car_types'
-    ];
-
     public function car(){
         return $this->belongsTo('App\Models\Car');
     }

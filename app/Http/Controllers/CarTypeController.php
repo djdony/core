@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CreateCarTypeRequest;
-use App\Http\Requests\UpdateCarTypeRequest;
+use App\Http\Requests\CarTypeRequest;
 use App\Repositories\CarTypeRepository;
-use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
@@ -48,11 +46,11 @@ class CarTypeController extends AppBaseController
     /**
      * Store a newly created CarType in storage.
      *
-     * @param CreateCarTypeRequest $request
+     * @param CarTypeRequest $request
      *
      * @return Response
      */
-    public function store(CreateCarTypeRequest $request)
+    public function store(CarTypeRequest $request)
     {
         $input = $request->all();
 
@@ -107,11 +105,11 @@ class CarTypeController extends AppBaseController
      * Update the specified CarType in storage.
      *
      * @param int $id
-     * @param UpdateCarTypeRequest $request
+     * @param CarTypeRequest $request
      *
      * @return Response
      */
-    public function update($id, UpdateCarTypeRequest $request)
+    public function update($id, CarTypeRequest $request)
     {
         $carType = $this->carTypeRepository->find($id);
 

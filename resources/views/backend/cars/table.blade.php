@@ -7,6 +7,7 @@
         <th>@lang('models/cars.fields.max_pax')</th>
         <th>@lang('models/cars.fields.max_luggage')</th>
         <th>@lang('models/cars.fields.description')</th>
+        <th>@lang('models/cars.fields.image')</th>
                 <th colspan="3">@lang('crud.action')</th>
             </tr>
         </thead>
@@ -18,6 +19,17 @@
             <td>{{ $car->max_pax }}</td>
             <td>{{ $car->max_luggage }}</td>
             <td>{{ $car->description }}</td>
+            <td>
+                <table>
+                    <tr>
+                        @foreach($car->images as $image)
+                        <td>
+                            <img src="{{ asset('images/thumbs/'.$image->url) }}" alt="{{$image->url}}">
+                        </td>
+                        @endforeach
+                    </tr>
+                </table>
+             </td>
                 <td>
                     {!! Form::open(['route' => ['admin.cars.destroy', $car->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

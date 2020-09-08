@@ -2,10 +2,8 @@
 
 namespace App\Http\Controllers;
 
-use App\Http\Requests\CreateFaqRequest;
-use App\Http\Requests\UpdateFaqRequest;
+use App\Http\Requests\FaqRequest;
 use App\Repositories\FaqRepository;
-use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
 use Flash;
 use Response;
@@ -48,11 +46,11 @@ class FaqController extends AppBaseController
     /**
      * Store a newly created Faq in storage.
      *
-     * @param CreateFaqRequest $request
+     * @param FaqRequest $request
      *
      * @return Response
      */
-    public function store(CreateFaqRequest $request)
+    public function store(FaqRequest $request)
     {
         $input = $request->all();
 
@@ -107,11 +105,11 @@ class FaqController extends AppBaseController
      * Update the specified Faq in storage.
      *
      * @param int $id
-     * @param UpdateFaqRequest $request
+     * @param FaqRequest $request
      *
      * @return Response
      */
-    public function update($id, UpdateFaqRequest $request)
+    public function update($id, FaqRequest $request)
     {
         $faq = $this->faqRepository->find($id);
 
