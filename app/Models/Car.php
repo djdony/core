@@ -28,8 +28,6 @@ class Car extends Model
 
     protected $dates = ['deleted_at'];
 
-    protected $with = ['images'];
-
     public $fillable = [
         'name',
         'car_type_id',

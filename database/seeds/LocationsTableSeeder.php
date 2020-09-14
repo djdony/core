@@ -23,7 +23,7 @@ class LocationsTableSeeder extends Seeder
                 'name' => 'Turkey',
                 'parent_id' => NULL,
                 'sort_order' => 1,
-                'type' => 'country',
+                'type' => 1,
             ),
             1 =>
             array (
@@ -33,7 +33,7 @@ class LocationsTableSeeder extends Seeder
                 'name' => 'Antalya',
                 'parent_id' => 1,
                 'sort_order' => 1,
-                'type' => 'region',
+                'type' => 2,
             ),
             2 =>
             array (
@@ -43,7 +43,7 @@ class LocationsTableSeeder extends Seeder
                 'name' => 'Kemer',
                 'parent_id' => 2,
                 'sort_order' => 1,
-                'type' => 'city',
+                'type' => 3,
             ),
             3 =>
             array (
@@ -53,7 +53,7 @@ class LocationsTableSeeder extends Seeder
                 'name' => 'Belek',
                 'parent_id' => 2,
                 'sort_order' => 1,
-                'type' => 'city',
+                'type' => 3,
             ),
             4 =>
             array (
@@ -63,7 +63,7 @@ class LocationsTableSeeder extends Seeder
                 'name' => 'Side',
                 'parent_id' => 2,
                 'sort_order' => 1,
-                'type' => 'city',
+                'type' => 3,
             ),
             5 =>
             array (
@@ -73,7 +73,7 @@ class LocationsTableSeeder extends Seeder
                 'name' => 'Antalya',
                 'parent_id' => 2,
                 'sort_order' => 1,
-                'type' => 'city',
+                'type' => 3,
             ),
             6 =>
             array (
@@ -83,7 +83,7 @@ class LocationsTableSeeder extends Seeder
                 'name' => 'Alanya',
                 'parent_id' => 2,
                 'sort_order' => 1,
-                'type' => 'city',
+                'type' => 3,
             ),
             7 =>
             array (
@@ -93,7 +93,7 @@ class LocationsTableSeeder extends Seeder
                 'name' => 'Antalya Airport',
                 'parent_id' => 2,
                 'sort_order' => 1,
-                'type' => 'airport',
+                'type' => 4,
             ),
             8 =>
             array (
@@ -103,7 +103,7 @@ class LocationsTableSeeder extends Seeder
                 'name' => 'Konyaalti',
                 'parent_id' => 8,
                 'sort_order' => 1,
-                'type' => 'subregion',
+                'type' => 5,
             ),
             9 =>
             array (
@@ -113,7 +113,7 @@ class LocationsTableSeeder extends Seeder
                 'name' => 'Lara',
                 'parent_id' => 8,
                 'sort_order' => 1,
-                'type' => 'subregion',
+                'type' => 5,
             ),
             10 =>
             array (
@@ -123,7 +123,7 @@ class LocationsTableSeeder extends Seeder
                 'name' => 'Gazipasa',
                 'parent_id' => 7,
                 'sort_order' => 1,
-                'type' => 'airport',
+                'type' => 4,
             ),
             11 =>
             array (
@@ -133,7 +133,7 @@ class LocationsTableSeeder extends Seeder
                 'name' => 'Muğla',
                 'parent_id' => 1,
                 'sort_order' => 1,
-                'type' => 'region',
+                'type' => 2,
             ),
             12 =>
             array (
@@ -143,7 +143,7 @@ class LocationsTableSeeder extends Seeder
                 'name' => 'Marmaris',
                 'parent_id' => 12,
                 'sort_order' => 1,
-                'type' => 'city',
+                'type' => 3,
             ),
             13 =>
             array (
@@ -153,7 +153,7 @@ class LocationsTableSeeder extends Seeder
                 'name' => 'Bodrum',
                 'parent_id' => 12,
                 'sort_order' => 1,
-                'type' => 'city',
+                'type' => 3,
             ),
             14 =>
             array (
@@ -163,7 +163,7 @@ class LocationsTableSeeder extends Seeder
                 'name' => 'Fethiye',
                 'parent_id' => 12,
                 'sort_order' => 1,
-                'type' => 'city',
+                'type' => 3,
             ),
             15 =>
             array (
@@ -173,7 +173,7 @@ class LocationsTableSeeder extends Seeder
                 'name' => 'Dalaman',
                 'parent_id' => 13,
                 'sort_order' => 1,
-                'type' => 'airport',
+                'type' => 4,
             ),
             16 =>
             array (
@@ -183,7 +183,7 @@ class LocationsTableSeeder extends Seeder
                 'name' => 'Milas',
                 'parent_id' => 14,
                 'sort_order' => 1,
-                'type' => 'airport',
+                'type' => 4,
             ),
             17 =>
             array (
@@ -193,7 +193,7 @@ class LocationsTableSeeder extends Seeder
                 'name' => 'Istanbul',
                 'parent_id' => 1,
                 'sort_order' => 1,
-                'type' => 'region',
+                'type' => 2,
             ),
             18 =>
             array (
@@ -203,7 +203,7 @@ class LocationsTableSeeder extends Seeder
                 'name' => 'Istanbul',
                 'parent_id' => 18,
                 'sort_order' => 1,
-                'type' => 'city',
+                'type' => 3,
             ),
             19 =>
             array (
@@ -213,7 +213,7 @@ class LocationsTableSeeder extends Seeder
                 'name' => 'Istanbul',
                 'parent_id' => 19,
                 'sort_order' => 1,
-                'type' => 'airport',
+                'type' => 4,
             ),
             20 =>
             array (
@@ -223,7 +223,7 @@ class LocationsTableSeeder extends Seeder
                 'name' => 'Sabiha',
                 'parent_id' => 19,
                 'sort_order' => 1,
-                'type' => 'airport',
+                'type' => 4,
             )
         ));
 

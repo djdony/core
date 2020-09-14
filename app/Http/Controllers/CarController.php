@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CarRequest;
+use App\Models\Car;
 use App\Repositories\CarRepository;
 use Illuminate\Http\Request;
 use Flash;
@@ -41,7 +42,7 @@ class CarController extends AppBaseController
      */
     public function index(Request $request)
     {
-        $cars = $this->carRepository->all();
+        $cars = Car::all();
 
         return view('backend.cars.index')
             ->with('cars', $cars);

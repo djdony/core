@@ -17,7 +17,7 @@ class CreateLocationsTable extends Migration
         Schema::create('locations', function (Blueprint $table) {
             $table->smallincrements('id');
             $table->string('name', 150);
-            $table->enum('type', ['country', 'region' , 'city' , 'subregion', 'airport', 'terminal']);
+            $table->tinyInteger('type');
             $table->string('code', 4)->nullable();
             $table->json('details')->nullable();
             $table->decimal('lat',11,8)->nullable();

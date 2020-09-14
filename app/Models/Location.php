@@ -21,10 +21,7 @@ class Location extends Model
 
     public $table = 'locations';
 
-
     protected $dates = ['deleted_at'];
-
-
 
     public $fillable = [
         'name',
@@ -32,6 +29,11 @@ class Location extends Model
         'code'
     ];
 
+    const COUNTRY = 1;
+    const REGION = 2;
+    const CITY = 3;
+    const AIRPORT = 4;
+    const SUBREGION = 5;
     /**
      * The attributes that should be casted to native types.
      *
@@ -40,7 +42,7 @@ class Location extends Model
     protected $casts = [
         'id' => 'integer',
         'name' => 'string',
-        'type' => 'string',
+        'type' => 'integer',
         'code' => 'string'
     ];
 
@@ -51,7 +53,8 @@ class Location extends Model
      */
     public static $rules = [
         'name' => 'required,unique:name',
-        'code' => 'lat decimal,11 text'
+        'lat' => 'decimal,11 text',
+        'lon' => 'decimal,11 text'
     ];
 
 

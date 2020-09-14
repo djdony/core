@@ -34,8 +34,50 @@
     @if(isset($car))
     @foreach($car->images as $image)
             <img src="{{ asset('images/thumbs/'.$image->url) }}" alt="{{$image->url}}">
+            <a id="deleteImage" class="btn btn-sm btn-outline-danger py-0" data-id="{{ $image->id }}" >Delete</a>
     @endforeach
+@section('script')
+<script>
+    $(document).ready(function () {
+        console.log( "ready!" );
+        $("body").on("click","#deleteImage",function(e){
+
+            if(!confirm("Delete Image?")) {
+                return false;
+            }
+
+            e.preventDefault();
+            var id = $(this).data("id");
+            var url = e.target;
+
+            $.ajax(
+                {
+                    headers: {
+                        'X-CSRF-TOKEN': $('meta[name="csrf-token"]').attr('content')
+                    },
+                    url: "/admin/images/"+id,
+                    type: 'DELETE',
+                    data: {
+                        id: id
+                    },
+                    success: function(data){
+                        if(data.success == true){ // if true (1)
+                            setTimeout(function(){// wait for 5 secs(2)
+                                location.reload(); // then reload the page.(3)
+                            }, 500);
+                        }
+                    }
+                })
+            return false;
+        });
+
+
+    });
+</script>
+@endsection
+
     @endif
+
     <input name="images[]" type="file" multiple>
 </div>
 
@@ -45,3 +87,4 @@
     {!! Form::submit(__('crud.save'), ['class' => 'btn btn-primary']) !!}
     <a href="{{ route('admin.cars.index') }}" class="btn btn-default">@lang('crud.cancel')</a>
 </div>
+
