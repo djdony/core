@@ -3,8 +3,10 @@
         <thead>
             <tr>
                 <th>@lang('models/locations.fields.name')</th>
-        <th>@lang('models/locations.fields.type')</th>
         <th>@lang('models/locations.fields.code')</th>
+        <th>@lang('models/locations.fields.parent')</th>
+        <th>Lattitude</th>
+        <th>Longtitude</th>
                 <th colspan="3">@lang('crud.action')</th>
             </tr>
         </thead>
@@ -12,8 +14,10 @@
         @foreach($locations as $location)
             <tr>
                 <td>{{ $location->name }}</td>
-            <td>{{ $location->type }}</td>
             <td>{{ $location->code }}</td>
+                <td>{{ $location->parent->name }}</td>
+                <td>{{ $location->lat }}</td>
+            <td>{{ $location->lon }}</td>
                 <td>
                     {!! Form::open(['route' => ['admin.locations.destroy', $location->id], 'method' => 'delete']) !!}
                     <div class='btn-group'>

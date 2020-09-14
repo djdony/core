@@ -26,7 +26,10 @@ class Location extends Model
     public $fillable = [
         'name',
         'type',
-        'code'
+        'code',
+        'lat',
+        'lon',
+        'parent_id'
     ];
 
     const COUNTRY = 1;
@@ -43,19 +46,13 @@ class Location extends Model
         'id' => 'integer',
         'name' => 'string',
         'type' => 'integer',
-        'code' => 'string'
+        'parent_id' => 'integer',
+        'code' => 'string',
+        'lat' => 'string',
+        'lon' => 'string'
     ];
 
-    /**
-     * Validation rules
-     *
-     * @var array
-     */
-    public static $rules = [
-        'name' => 'required,unique:name',
-        'lat' => 'decimal,11 text',
-        'lon' => 'decimal,11 text'
-    ];
+
 
 
 }

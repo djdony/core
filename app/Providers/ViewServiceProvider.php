@@ -3,6 +3,7 @@
 namespace App\Providers;
 use App\Models\CarType;
 
+use App\Models\Location;
 use Illuminate\Support\ServiceProvider;
 use View;
 
@@ -29,6 +30,5 @@ class ViewServiceProvider extends ServiceProvider
             $car_typeItems = CarType::pluck('name','id');
             $view->with('car_typeItems', $car_typeItems);
         });
-        //
     }
 }

@@ -13,12 +13,12 @@
                          <div class="card-header">
                              <i class="fa fa-align-justify"></i>
                              @lang('models/locations.plural')
-                             <a class="pull-right" href="{{ route('admin.locations.create') }}"><i class="fa fa-plus-square fa-lg"></i></a>
+                             <a class="pull-right" href="{{ route('admin.locations.create') }}?type={{ app('request')->input('type') }}"><i class="fa fa-plus-square fa-lg"></i></a>
                          </div>
                          <div class="card-body">
                              @include('backend.locations.table')
                               <div class="pull-right mr-3">
-                                     
+
                               </div>
                          </div>
                      </div>

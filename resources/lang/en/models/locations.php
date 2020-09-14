@@ -3,8 +3,13 @@
 return array (
   'singular' => 'Location',
   'plural' => 'Locations',
-  'fields' => 
+  'regions' => 'Regions',
+  'cities' => 'Cities',
+  'subregions' => 'SubRegions',
+  'airports' => 'Airports',
+  'fields' =>
   array (
+    'parent' => 'Parent',
     'id' => 'Id',
     'name' => 'Name',
     'type' => 'Type',

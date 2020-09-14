@@ -19,12 +19,14 @@ class LocationRequest extends FormRequest
     }
 
     /**
-     * Get the validation rules that apply to the request.
+     * Validation rules
      *
-     * @return array
+     * @var array
      */
-    public function rules()
-    {
-        return Location::$rules;
+    public function rules() {
+        return [
+            'name' => 'required',
+        ];
     }
+
 }

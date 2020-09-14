@@ -31,12 +31,38 @@
         </li>
     </ul>
 </li>
-<li class="nav-item {{ Request::is('admin/locations*') ? 'active' : '' }}">
-    <a class="nav-link" href="{{ route('admin.locations.index') }}">
-        <i class="nav-icon icon-cursor"></i>
-        <span>@lang('models/locations.plural')</span>
+<li class="nav-item nav-dropdown">
+    <a class="nav-link nav-dropdown-toggle" href="#">
+        <i class="nav-icon cui-puzzle"></i> @lang('models/locations.plural')
     </a>
+    <ul class="nav-dropdown-items">
+        <li class="nav-item {{ Request::is('admin/locations*') ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('admin.locations.index') }}?type=2">
+                <i class="nav-icon icon-cursor"></i>
+                <span>@lang('models/locations.regions')</span>
+            </a>
+        </li>
+        <li class="nav-item {{ Request::is('admin/locations*') ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('admin.locations.index') }}?type=3">
+                <i class="nav-icon icon-cursor"></i>
+                <span>@lang('models/locations.cities')</span>
+            </a>
+        </li>
+        <li class="nav-item {{ Request::is('admin/locations*') ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('admin.locations.index') }}?type=4">
+                <i class="nav-icon icon-cursor"></i>
+                <span>@lang('models/locations.airports')</span>
+            </a>
+        </li>
+        <li class="nav-item {{ Request::is('admin/locations*') ? 'active' : '' }}">
+            <a class="nav-link" href="{{ route('admin.locations.index') }}?type=5">
+                <i class="nav-icon icon-cursor"></i>
+                <span>@lang('models/locations.subregions')</span>
+            </a>
+        </li>
+    </ul>
 </li>
+
 <li class="nav-item {{ Request::is('admin/drivers*') ? 'active' : '' }}">
     <a class="nav-link" href="{{ route('admin.drivers.index') }}">
         <i class="nav-icon icon-cursor"></i>
