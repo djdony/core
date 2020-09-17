@@ -25,9 +25,8 @@ Route::group(['prefix' => 'admin'], function () {
     Route::resource('cars', 'CarController', ["as" => 'admin']);
     Route::resource('locations', 'LocationController', ["as" => 'admin']);
     Route::resource('drivers', 'DriverController', ["as" => 'admin']);
+    Route::resource('customers', 'CustomerController', ["as" => 'admin']);
+    Route::resource('bookings', 'BookingController', ["as" => 'admin']);
 });
 
-
 Route::view('/', 'api');
-
-
