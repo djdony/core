@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use App\Http\Requests\CreateCustomerRequest;
-use App\Http\Requests\UpdateCustomerRequest;
+use App\Http\Requests\CustomerRequest;
 use App\Repositories\CustomerRepository;
 use App\Http\Controllers\AppBaseController;
 use Illuminate\Http\Request;
@@ -111,7 +111,7 @@ class CustomerController extends AppBaseController
      *
      * @return Response
      */
-    public function update($id, UpdateCustomerRequest $request)
+    public function update($id, CustomerRequest $request)
     {
         $customer = $this->customerRepository->find($id);
 

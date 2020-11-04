@@ -5,39 +5,18 @@ namespace App\Models;
 use Eloquent as Model;
 use Illuminate\Database\Eloquent\SoftDeletes;
 
-/**
- * Class Booking
- * @package App\Models
- * @version September 15, 2020, 12:40 am UTC
- *
- * @property \App\Models\ $
- * @property \App\Models\ $1
- * @property 1t1 Customer
- * @property integer $from
- * @property integer $to
- * @property string $date
- * @property time $time
- * @property string $flight
- * @property tinyinteger $type
- * @property integer $customer_id
- * @property string $info
- */
 class Booking extends Model
 {
     use SoftDeletes;
 
     public $table = 'bookings';
 
-
     protected $dates = ['deleted_at'];
-
-
 
     public $fillable = [
         'from',
         'to',
         'date',
-        'time',
         'flight',
         'type',
         'customer_id',

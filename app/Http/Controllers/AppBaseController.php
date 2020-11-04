@@ -36,3 +36,4 @@ class AppBaseController extends Controller
         ], 200);
     }
 }
+
